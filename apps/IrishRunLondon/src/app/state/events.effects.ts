@@ -6,7 +6,9 @@ import * as EventsActions from './events.actions';
 
 @Injectable()
 export class EventsEffects {
-  constructor(private actions$: Actions) {}
+  constructor(
+    private actions$: Actions
+  ) {}
 
   // Mock JSON data for events
   private  mockEvents = [
@@ -51,13 +53,14 @@ export class EventsEffects {
     ]
 
 
-    loadEvents$ = createEffect(() =>
+  loadEvents$ = createEffect(() =>
     this.actions$.pipe(
       ofType(EventsActions.loadEvents),
       switchMap(() =>
+        // Replace the service call with the mock data
         of(this.mockEvents).pipe(
-          map((events) => EventsActions.loadEventsSuccess({ events })),
-          catchError((error) => of(EventsActions.loadEventsFailure({ error })))
+          map(events => EventsActions.loadEventsSuccess({ events })),
+          catchError(error => of(EventsActions.loadEventsFailure({ error })))
         )
       )
     )

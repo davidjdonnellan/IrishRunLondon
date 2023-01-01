@@ -5,19 +5,22 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideHttpClient } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { eventsReducer } from './state/events.reducer';
 import { EventsEffects } from './state/events.effects';
-import { provideStoreDevtools } from '@ngrx/store-devtools';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideClientHydration(withEventReplay()),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
-    provideStore(),
     provideHttpClient(),
-    provideStore({ events: eventsReducer }),
+
+    provideStore({ events: eventsReducer }),  // ✅ Only once
+    provideEffects([EventsEffects]),
     provideStoreDevtools(),
-  //  provideEffects([EventsEffects]),  // Registering the Effects correctly here
   ],
 };
+
+
