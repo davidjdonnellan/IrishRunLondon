@@ -1,24 +1,24 @@
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1c1c1c;
+}
 
-  /* Menu Toggle Button */
-  .menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #1c1c1c;
-  }
-  
-  /* Navigation Bar */
-  .nav {
-    background: var(--irl-color-white);
-    width:100%;
-    padding:0.1rem 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+/* Navigation Bar */
+.nav {
+  background: var(--irl-color-white);
+  width: 100%;
+  padding: 0.1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 /* Container holds logo and nav-links */
 .nav-container {
   max-width: 100%;
@@ -30,13 +30,18 @@
 .logo {
   height: 5rem;
 }
-
+.header-title {
+    margin-left: 1rem;
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+  }
 /* Nav links on the right */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 2rem;
-  margin-left: auto; /* Pushes nav-links to the right */
+  margin-left: auto;
+  /* Pushes nav-links to the right */
 }
 
 .nav-links li a {
@@ -49,7 +54,7 @@
 .nav-links li {
   position: relative;
   display: inline-block;
-  padding:0.25rem 0rem;
+  padding: 0.25rem 0rem;
 }
 
 .nav-links li::after {
@@ -61,40 +66,63 @@
   width: 100%;
   background-color: var(--irl-color-primary);
   transform: scaleX(0);
-  transform-origin: left; /* ← Start from left */
+  transform-origin: left;
+  /* ← Start from left */
   transition: transform 0.5s ease-in-out;
 }
 
-.nav-links li:hover::after {
-  transform: scaleX(1); /* Expand to the right */
+.nav-links li:hover::after,
+.nav-links li.active::after {
+  transform: scaleX(1);
+  /* Expand to full width */
 }
 
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background: white;
-      width: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 2rem 2rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-  
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .nav-links li {
-      margin-bottom: 1rem;
-    }
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+  /* Menu toggle aligned to the right */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    /* Position it on top of the screen */
+
+    right: 1rem;
+    /* Align to the right edge of the screen */
+    z-index: 100;
+    /* Ensure it's on top of other elements */
   }
-  
+
+  /* Logo */
+  .logo {
+    height: 2.5rem;
+  }
+
+  /* Navigation menu */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Position it right below the toggle button */
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* When .nav-links has the .show class, display the menu */
+  .nav-links.show {
+    display: flex;
+    /* Show the menu when .show is added */
+  }
+
+  /* Center-align the header title */
+  .header-title {
+    display: none;
+    /* Use flexbox to center content */
+  }
+}
