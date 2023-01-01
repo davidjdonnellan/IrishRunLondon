@@ -1,4 +1,30 @@
 @import 'bootstrap/scss/bootstrap-grid';
+  :root {
+  --irl-header-font: 'Cocon Pro', sans-serif;
+  --irl-body-font: 'Open Sans', sans-serif;
+  --irl-semi-bold: 400; /* Semibold weight */
+  --irl-bold: 700;      /* Bold weight */
+
+  /* Optional: Common sizes */
+  --base-font-size: 16px;
+  --font-scale: 1.25;
+
+  /* Core colors */
+  --irl-color-primary: #50915a;
+  --irl-color-primary-dark: #3e7347;
+  --irl-color-primary-light: #71aa7a;
+
+  --irl-color-secondary: #4a6fa5;
+  --irl-color-secondary-dark: #3a5a88;
+
+  --irl-color-white: #ffffff;
+  --irl-color-black: #000000;
+  --irl-color-gray: #f4f4f4;
+
+  /* Border radius & transition for elegance */
+  --radius: 6px;
+  --transition: 0.3s ease;
+  }
 @font-face {
   font-family: 'Cocon Pro';
   src: url('/assets/fonts/CoconPro-Regular.woff2') format('woff2'),
@@ -31,37 +57,9 @@
   font-style: normal;
 }
 
-/* CSS Variables */
-:root {
-    * {
+  * {
     box-sizing: border-box;
   }
-  --irl-header-font: 'Cocon Pro', sans-serif;
-  --irl-body-font: 'Open Sans', sans-serif;
-  --irl-semi-bold: 400; /* Semibold weight */
-  --irl-bold: 700;      /* Bold weight */
-
-  /* Optional: Common sizes */
-  --base-font-size: 16px;
-  --font-scale: 1.25;
-
-  /* Core colors */
-  --irl-color-primary: #50915a;
-  --irl-color-primary-dark: #3e7347;
-  --irl-color-primary-light: #71aa7a;
-
-  --irl-color-secondary: #4a6fa5;
-  --irl-color-secondary-dark: #3a5a88;
-
-  --irl-color-white: #ffffff;
-  --irl-color-black: #000000;
-  --irl-color-gray: #f4f4f4;
-
-  /* Border radius & transition for elegance */
-  --radius: 6px;
-  --transition: 0.3s ease;
-}
-
 /* Buttons */
 .button-primary {
   background-color: var(--irl-color-primary);

@@ -46,8 +46,27 @@
   transition: color 0.3s ease;
 }
 
-.nav-links li a:hover {
-  color: #169b62;
+.nav-links li {
+  position: relative;
+  display: inline-block;
+  padding:0.25rem 0rem;
+}
+
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--irl-color-primary);
+  transform: scaleX(0);
+  transform-origin: left; /* ← Start from left */
+  transition: transform 0.5s ease-in-out;
+}
+
+.nav-links li:hover::after {
+  transform: scaleX(1); /* Expand to the right */
 }
 
   
