@@ -10,6 +10,7 @@
 
 /* Navigation Bar */
 .nav {
+  display: block;
   background: var(--irl-color-white);
   width: 100%;
   padding: 0.1rem 2rem;
@@ -24,17 +25,21 @@
   max-width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  /* Add this line */
 }
 
 /* Logo on the left */
 .logo {
   height: 5rem;
 }
+
 .header-title {
-    margin-left: 1rem;
-    transform-origin: left;
-    transition: transform 0.5s ease-in-out;
-  }
+  margin-left: 0.5rem;
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
 /* Nav links on the right */
 .nav-links {
   list-style: none;
@@ -84,15 +89,14 @@
 
   /* Menu toggle aligned to the right */
   .menu-toggle {
-    display: block;
-    position: absolute;
-    /* Position it on top of the screen */
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Or absolute, depending on context */
 
-    right: 1rem;
-    /* Align to the right edge of the screen */
-    z-index: 100;
-    /* Ensure it's on top of other elements */
+
   }
+
 
   /* Logo */
   .logo {
@@ -123,6 +127,10 @@
   /* Center-align the header title */
   .header-title {
     display: none;
-    /* Use flexbox to center content */
+
+  }
+
+  .nav {
+    padding: 0.5rem
   }
 }
