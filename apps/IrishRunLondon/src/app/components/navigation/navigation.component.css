@@ -32,8 +32,8 @@
   
   /* Logo */
   .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    width:2rem;
+    height:2rem;
     color: #1c1c1c;
     text-decoration: none;
   }
