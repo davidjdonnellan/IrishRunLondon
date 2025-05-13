@@ -5,6 +5,23 @@ import { CommonModule } from '@angular/common';
   selector: 'navigation',
   imports: [CommonModule],
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.css',
+  styleUrl: './navigation.component.scss',
 })
-export class NavigationComponent {}
+export class NavigationComponent {
+  navItems = [{
+    "title": "Home",
+    "href": '/'
+  },
+  {
+    "title": "Gallery",
+    "href": '/gallary'
+  },
+  {
+    "title": "Events",
+    "href": '/events'
+  }, {
+    "title": "Contact",
+    "href": '/contactus'
+  },
+  ]
+}

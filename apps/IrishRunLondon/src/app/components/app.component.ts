@@ -9,5 +9,5 @@ import { NavigationComponent } from './navigation/navigation.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'IrishRunLondon';
+  title = 'Irish Running London';
 }

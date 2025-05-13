@@ -1,1 +1,134 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Cocon Pro';
+  src: url('/assets/fonts/CoconPro-Regular.woff2') format('woff2'),
+       url('/assets/fonts/CoconPro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/assets/fonts/OpenSans-Regular.woff2') format('woff2'),
+       url('/assets/fonts/OpenSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/assets/fonts/OpenSans-Semibold.woff2') format('woff2'),
+       url('/assets/fonts/OpenSans-Semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/assets/fonts/OpenSans-Bold.woff2') format('woff2'),
+       url('/assets/fonts/OpenSans-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* CSS Variables */
+:root {
+    * {
+    box-sizing: border-box;
+  }
+  --irl-header-font: 'Cocon Pro', sans-serif;
+  --irl-body-font: 'Open Sans', sans-serif;
+  --irl-semi-bold: 400; /* Semibold weight */
+  --irl-bold: 700;      /* Bold weight */
+
+  /* Optional: Common sizes */
+  --base-font-size: 16px;
+  --font-scale: 1.25;
+
+  /* Core colors */
+  --irl-color-primary: #50915a;
+  --irl-color-primary-dark: #3e7347;
+  --irl-color-primary-light: #71aa7a;
+
+  --irl-color-secondary: #4a6fa5;
+  --irl-color-secondary-dark: #3a5a88;
+
+  --irl-color-white: #ffffff;
+  --irl-color-black: #000000;
+  --irl-color-gray: #f4f4f4;
+
+  /* Border radius & transition for elegance */
+  --radius: 6px;
+  --transition: 0.3s ease;
+}
+
+/* Buttons */
+.button-primary {
+  background-color: var(--irl-color-primary);
+  color: var(--irl-color-white);
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  background-color: var(--irl-color-primary-dark);
+}
+
+.button-secondary {
+  background-color: var(--irl-color-secondary);
+  color: var(--irl-color-white);
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.button-secondary:hover,
+.button-secondary:focus {
+  background-color: var(--irl-color-secondary-dark);
+}
+
+/* Inputs */
+input,
+textarea {
+  border: 1px solid var(--irl-color-primary-light);
+  padding: 0.5em;
+  border-radius: var(--radius);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--irl-color-primary);
+  box-shadow: 0 0 0 2px rgba(80, 145, 90, 0.2);
+  outline: none;
+}
+
+/* Links */
+a {
+  color: var(--irl-color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover,
+a:focus {
+  color: var(--irl-color-primary-dark);
+}
+
+/* Backgrounds */
+body {
+  background-color: var(--irl-color-white);
+  color: var(--irl-color-black);
+  font-family: var(--irl-body-font);
+  line-height: 1.6;
+}
+
+h1{
+  font-family: var(--irl-semi-bold);
+  
+}
