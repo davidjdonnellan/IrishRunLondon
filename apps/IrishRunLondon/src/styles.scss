@@ -1,4 +1,5 @@
 @import 'bootstrap/scss/bootstrap-grid';
+
   :root {
   --irl-header-font: 'Cocon Pro', sans-serif;
   --irl-body-font: 'Open Sans', sans-serif;
@@ -125,6 +126,7 @@ body {
   color: var(--irl-color-black);
   font-family: var(--irl-body-font);
   line-height: 1.6;
+  font-weight: 400;
 }
 body {
   font-family: var(--irl-body-font);
