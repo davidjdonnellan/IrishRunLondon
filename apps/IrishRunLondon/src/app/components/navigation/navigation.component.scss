@@ -13,7 +13,7 @@
   display: block;
   background: var(--irl-color-white);
   width: 100%;
-  padding: 0.1rem 2rem;
+  padding: 1rem 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -33,7 +33,7 @@
 }
 
 .header-title {
-  margin: auto 0.5rem ;
+  margin: auto 0.5rem 0rem 0.5rem ;
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
   font-size: 1.5rem;
@@ -42,6 +42,7 @@
 }
 
 .nav-links {
+  margin: auto 0.5rem 0rem 0.5rem ;
   list-style: none;
   display: flex;
   gap: 2rem;
