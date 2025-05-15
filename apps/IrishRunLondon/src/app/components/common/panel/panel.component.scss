@@ -11,8 +11,22 @@
     height:15rem;
     border-radius: 10rem;
     border: 1px solid var(--irl-color-primary);
-
 }
 .panel .text{
-    padding:1rem 2rem;
+    padding:1rem 1rem;
+}
+
+@media (max-width: 768px) {
+.panel img{
+    margin:auto;
+    width:12rem;
+    height:12rem;
+    border-radius: 10rem;
+    border: 1px solid var(--irl-color-primary);
+}
+
+.panel{
+    padding:1rem;   
+    margin:1rem;
+}
 }
