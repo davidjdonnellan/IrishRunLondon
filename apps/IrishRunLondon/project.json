@@ -22,7 +22,10 @@
             "input": "apps/IrishRunLondon/public"
           }
         ],
-        "styles": ["apps/IrishRunLondon/src/styles.scss"],
+        "styles": [
+          "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+          "apps/IrishRunLondon/src/styles.scss"
+       ],
         "scripts": []
       },
       "configurations": {

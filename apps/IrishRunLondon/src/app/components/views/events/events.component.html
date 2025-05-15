@@ -1,1 +1,6 @@
-<p>events works!</p>
+<h1 class="text-left px-5 py-4 mt-4">Upcoing Events</h1>
+<div class="row px-5" >
+    <div *ngFor="let event of events"class="col-md-4">
+        <card [event]="event"></card></div>
+</div>
+
