@@ -1,41 +1,7 @@
-@import 'bootstrap/scss/bootstrap-grid';
-@font-face {
-  font-family: 'Cocon Pro';
-  src: url('/assets/fonts/CoconPro-Regular.woff2') format('woff2'),
-       url('/assets/fonts/CoconPro-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+@use  'bootstrap/scss/bootstrap-grid';
+@use 'bootstrap/scss/bootstrap';
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/assets/fonts/OpenSans-Regular.woff2') format('woff2'),
-       url('/assets/fonts/OpenSans-Regular.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/assets/fonts/OpenSans-Semibold.woff2') format('woff2'),
-       url('/assets/fonts/OpenSans-Semibold.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url('/assets/fonts/OpenSans-Bold.woff2') format('woff2'),
-       url('/assets/fonts/OpenSans-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* CSS Variables */
-:root {
-    * {
-    box-sizing: border-box;
-  }
+  :root {
   --irl-header-font: 'Cocon Pro', sans-serif;
   --irl-body-font: 'Open Sans', sans-serif;
   --irl-semi-bold: 400; /* Semibold weight */
@@ -60,6 +26,13 @@
   /* Border radius & transition for elegance */
   --radius: 6px;
   --transition: 0.3s ease;
+  }
+
+/* Best Practice Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 /* Buttons */
@@ -127,6 +100,7 @@ body {
   color: var(--irl-color-black);
   font-family: var(--irl-body-font);
   line-height: 1.6;
+  font-weight: 400;
 }
 body {
   font-family: var(--irl-body-font);
@@ -138,7 +112,10 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--irl-header-font);
-  font-weight: var( --irl-semi-bold);
+  font-weight: var( --irl-bold);
 }
 
+ol, ul, dl{
+  margin:0px;
 
+}

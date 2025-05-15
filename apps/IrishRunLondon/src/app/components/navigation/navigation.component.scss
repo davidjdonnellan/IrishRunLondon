@@ -1,42 +1,54 @@
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1c1c1c;
+}
 
-  /* Menu Toggle Button */
-  .menu-toggle {
-    display: none;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #1c1c1c;
-  }
-  
-  /* Navigation Bar */
-  .nav {
-    background: var(--irl-color-white);
-    width:100%;
-    padding:0.1rem 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+/* Navigation Bar */
+.nav {
+  display: block;
+  background: var(--irl-color-white);
+  width: 100%;
+  padding: 0.5rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 /* Container holds logo and nav-links */
 .nav-container {
   max-width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-/* Logo on the left */
 .logo {
   height: 5rem;
 }
 
-/* Nav links on the right */
+.header-title {
+  padding: 0rem 0rem 0.25rem 0rem ;
+  margin: auto 0.5rem 0rem 0.5rem ;
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  font-size: 1.5rem;
+  font-weight: var(--irl-semi-bold);
+  border-bottom:3px solid var(--irl-color-primary)
+  
+}
+
 .nav-links {
+  margin: auto 0.5rem 0rem 0.5rem ;
   list-style: none;
   display: flex;
   gap: 2rem;
-  margin-left: auto; /* Pushes nav-links to the right */
+  margin-left: auto;
 }
 
 .nav-links li a {
@@ -45,37 +57,78 @@
   font-weight: 500;
   transition: color 0.3s ease;
 }
-
-.nav-links li a:hover {
-  color: #169b62;
+.nav-links li:hover a{
+  color:var(--irl-color-primary)
+}
+.nav-links li {
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0rem;
 }
 
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-  
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background: white;
-      width: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 2rem 2rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-  
-    .nav-links.show {
-      display: flex;
-    }
-  
-    .nav-links li {
-      margin-bottom: 1rem;
-    }
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--irl-color-primary);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.nav-links li:hover::after,
+.nav-links li.active::after {
+  transform: scaleX(1);
+  /* Expand to full width */
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav{
+    padding:0.5rem 1rem
   }
-  
+  /* Menu toggle aligned to the right */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* Or absolute, depending on context */
+  }
+  /* Logo */
+  .logo {
+    height: 3rem;
+  }
+  /* Navigation menu */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Position it right below the toggle button */
+    right: 0;
+    background: white;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* When .nav-links has the .show class, display the menu */
+  .nav-links.show {
+    display: flex;
+    /* Show the menu when .show is added */
+  }
+
+  /* Center-align the header title */
+  .header-title {
+    display: none;
+
+  }
+
+}

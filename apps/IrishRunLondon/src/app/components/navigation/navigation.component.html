@@ -1,12 +1,14 @@
 <nav class="nav">
     <div class="nav-container">
-      <a href="#"> <img src="irl-logo.png" alt="Site Logo" class="logo"></a>
-      <h1 class="header">Irish Running London</h1>
+      <a href="/"> <img src="irl-logo.png" alt="Site Logo" class="logo"></a>
+      <h1 class="header-title">Irish Running London</h1>
       <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
         ☰
       </button>
-      <ul class="nav-links" id="nav-links">
-        <li *ngFor="let items of navItems"><a [href]="items.href">{{items.title}}</a></li>
+      <ul class="nav-links">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-items" *ngFor="let items of navItems">
+          <a [routerLink]="items.href">{{items.title}}</a>
+        </li>
       
       </ul>
     </div>
