@@ -1,4 +1,5 @@
 @import 'bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/bootstrap';
 
   :root {
   --irl-header-font: 'Cocon Pro', sans-serif;
@@ -141,4 +142,7 @@ h1, h2, h3, h4 {
   font-weight: var( --irl-semi-bold);
 }
 
+ol, ul, dl{
+  margin:0px;
 
+}

@@ -35,9 +35,11 @@
 }
 
 .header-title {
-  margin-left: 0.5rem;
+  margin: auto 0.5rem ;
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
+  font-size: 1.5rem;
+  
 }
 
 /* Nav links on the right */
@@ -96,16 +98,12 @@
     position: relative;
     /* Or absolute, depending on context */
   }
-
-
   /* Logo */
   .logo {
     height: 2.5rem;
   }
-
   /* Navigation menu */
   .nav-links {
-
     display: none;
     position: absolute;
     top: 100%;
