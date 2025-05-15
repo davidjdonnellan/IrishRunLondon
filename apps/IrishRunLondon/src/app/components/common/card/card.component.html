@@ -1,15 +1,21 @@
-<h3>Event</h3>
-<h4>{{event.event}}</h4>
-<i class="fa fa-map-marker row m-1 p-1"> {{event.location}}</i>
-<i class="fa fa-calendar row m-1 p-1"> {{event.date}}</i>
-<i class="fa fa-clock row m-1 p-1"> {{event.time}}</i>
-<!-- 
-
-   { "event":"5K Run",
-        "location":"Hyde Park Corner",
-        "image":"",
-        "coordinates":"",
-        "date":"02/04/2025",
-        "time":"9:00am",
-        "bagDrop":"false",
-      }, -->
+<div class="card">
+    <h4>{{event.event}}</h4>
+    <img *ngIf="event.image" [src]="event.image" class="card-image m-1">
+    
+    <span class="p-1" *ngIf="!event.coordinates; else coorindateFound">
+    <i class="fa fa-map-marker mx-2"> </i>{{event.location}}</span>
+    <ng-template #coorindateFound>
+     <a target="_blank" class="p-1" [href]="event.coordinates">
+    <i class="fa fa-map-marker mx-2"> </i>{{event.location}}</a>
+    </ng-template>
+ <span  class="p-1">
+    <i class="fa fa-calendar mx-2"> </i>{{event.date}}</span>
+ <span  class="p-1">
+    <i class="fa fa-clock  mx-2"> </i>{{event.time}}</span>
+ <span *ngIf="event.bagDrop !== null"  class="p-1">
+    <i  class="fa fa-suitcase  mx-2"></i>
+        {{ event.bagDrop===true  ? 'Yes' : 'No' }}</span>
+<span *ngIf="event.description" class="p-1">
+    <i class="fa fa-info-circle  mx-2"> </i>{{event.description}}</span>
+    
+</div>
