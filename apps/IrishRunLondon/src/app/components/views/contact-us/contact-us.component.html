@@ -1,34 +1,7 @@
 <h1 class="text-center px-5 py-4 mt-4">Get in touch</h1>
+
 <ul class="container">
-        <li class="row">
-                <a class="text-body-secondary" target="_blank" href="mailto:info@irishrunlondon.com"
-                        aria-label="email">
-                        <span class="p-1">
-                                <i class="fa fa-envelope"> </i>
-                                info&#64;irishrunlondon.com</span></a>
-        </li>
-        <li class="row">
-                <a class="text-body-secondary" target="_blank" href="https://www.instagram.com/irishrunninglondon/"
-                        aria-label="Instagram">
-                        <img src="instagram.svg" alt="Instagram logo" width="20" height="20">
-                &#64;irishrunninglondon
-                </a>
-
-        </li>
-        <li class="row">
-
-                <a class="text-body-secondary" target="_blank" href="https://www.facebook.com/groups/IrishRUNLondon/"
-                        aria-label="facebook">
-                        <img src="facebook.svg" alt="Facebook logo" width="20" height="20">
-                Irish Run London</a>
-
-        </li>
-        <li class="row">
-
-                <a class="text-body-secondary" target="_blank" href="https://chat.whatsapp.com/IGwe9Cdxw6ZFrfUEtexvcc"
-                        aria-label="whatsapp">
-                        <img src="whatsapp.svg" alt="Whatsapp logo" width="20" height="20">
-                Irish Run London</a>
-
-        </li>
-</ul>
+<div class="row m-auto" >
+    <div *ngFor="let contact of contactInfo"class="col-lg-3">
+        <contact-card [contact]="contact"></contact-card></div>
+</div>

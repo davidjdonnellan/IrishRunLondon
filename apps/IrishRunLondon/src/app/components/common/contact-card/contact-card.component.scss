@@ -1,0 +1,13 @@
+.contact-card {
+    padding:1rem;
+    border:1px solid var(--irl-color-gray);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius:1rem;
+
+     display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally center children */
+  text-align: center;   
+  color: var(--irl-color-black);
+
+}

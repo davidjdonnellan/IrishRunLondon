@@ -1,6 +1,6 @@
 <div class="card">
     <h4>{{event.event}}</h4>
-    <img *ngIf="event.image" [src]="event.image" class="card-image">
+    <img *ngIf="event.image" [src]="event.image" alt="event image" class="card-image">
     
     <span class="p-1" *ngIf="!event.coordinates; else coorindateFound">
     <i class="fa fa-map-marker mx-2"> </i>{{event.location}}</span>
