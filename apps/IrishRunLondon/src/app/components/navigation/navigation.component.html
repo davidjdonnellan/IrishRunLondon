@@ -2,14 +2,14 @@
     <div class="nav-container">
       <a href="/"> <img src="irl-logo.png" alt="Site Logo" class="logo"></a>
       <h1 class="header-title">Irish Running London</h1>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" #dropdownRef
+       (click)="toggleMenu()">
         ☰
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" [ngClass]="{ 'show': isMenuOpen }">
         <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-items" *ngFor="let items of navItems">
           <a [routerLink]="items.href">{{items.title}}</a>
         </li>
-      
       </ul>
     </div>
   </nav>
