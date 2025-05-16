@@ -19,19 +19,19 @@ export class ContactUsComponent {
         {
           "icon":"instagram.svg",
           "tag":"@irishrunninglondon",
-          "description":"Follow us on Instagram",
+          "description":"Follow us",
           "href":"https://www.instagram.com/irishrunninglondon/"
         },
         {
           "icon":"facebook.svg",
           "tag":"Irish Run London",
-          "description":"Find us on Facebook",
+          "description":"Find us",
           "href":"https://www.facebook.com/groups/IrishRUNLondon/"
         },
         {
           "icon":"whatsapp.svg",
           "tag":"Irish Run London",
-          "description":"Join the conversation on WhatsApp",
+          "description":"Join the conversation",
           "href":"https://chat.whatsapp.com/IGwe9Cdxw6ZFrfUEtexvcc"
         }
 
