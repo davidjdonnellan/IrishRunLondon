@@ -13,11 +13,11 @@
   display: block;
   background: var(--irl-color-white);
   width: 100%;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 5;
 }
 
 /* Container holds logo and nav-links */
@@ -74,7 +74,6 @@
   height: 3px;
   width: 100%;
   background-color: var(--irl-color-primary);
-
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
@@ -83,7 +82,6 @@
 .nav-links li:hover::after,
 .nav-links li.active::after {
   transform: scaleX(1);
-  /* Expand to full width */
 }
 
 
@@ -91,7 +89,8 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav{
-    padding:0.5rem 1rem
+    padding:0.5rem 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
   /* Menu toggle aligned to the right */
   .menu-toggle {
@@ -106,29 +105,42 @@
   }
   /* Navigation menu */
   .nav-links {
-    display: none;
+    background-color: white;
     position: absolute;
     top: 100%;
     /* Position it right below the toggle button */
     right: 0;
-    background: white;
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    padding: 2rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index:1;
+    overflow: hidden;
+    padding:0rem 1.5rem;
+    margin:0px;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    gap: 0.5rem;
+    border-bottom: 1px solid lightgray;  
   }
 
-  /* When .nav-links has the .show class, display the menu */
-  .nav-links.show {
-    display: flex;
-    /* Show the menu when .show is added */
-  }
+  .nav-links li::after {
 
+    background-color: white;
+  }
   /* Center-align the header title */
   .header-title {
     display: none;
 
   }
+  .nav-links.show {
+    width:100%;
+    max-height: 500px; /* Enough to show all links */
+    opacity: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* This is your shadow */
+    transition: max-height 0.4s ease-in;
+    padding:1rem 1.5rem;
+    margin:0px;
+}
 
 }
