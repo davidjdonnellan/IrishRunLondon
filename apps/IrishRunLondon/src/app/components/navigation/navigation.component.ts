@@ -36,6 +36,9 @@ export class NavigationComponent {
   }, {
     "title": "Contact",
     "href": '/contactus'
+  }, {
+    "title": "About",
+    "href": '/about'
   },
   ]
 }
