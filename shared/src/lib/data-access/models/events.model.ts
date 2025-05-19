@@ -1,10 +1,9 @@
 export interface Events {
-  id:number
   event: string;
   location: string;
   image: string;
   coordinates: string;
-  date: Date;
+  date: string;
   time: string;
   bagDrop: boolean;
   description:string
