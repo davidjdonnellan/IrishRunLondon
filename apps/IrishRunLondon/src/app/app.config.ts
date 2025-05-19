@@ -7,18 +7,21 @@ import {
 } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
-import { counterReducer } from './store/app.reducer'
+import { provideEffects } from '@ngrx/effects';
+import { eventsReducer } from './state/events.reducer'
+import { EventsEffects } from './state/events.effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
-
+console.log('eventsReducer:', eventsReducer);
+console.log('EventsEffects:', EventsEffects);
 export const appConfig: ApplicationConfig = {
   providers: [
     provideClientHydration(withEventReplay()),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
-    provideStore(),
     provideHttpClient(),
-    provideStore({ count: counterReducer }),
-    provideStoreDevtools()
-],
+    provideStore({ events: eventsReducer }),
+    provideStoreDevtools(),
+    provideEffects([EventsEffects])
+  ],
 };
