@@ -15,8 +15,16 @@ export const selectEventsLoading = createSelector(
   state => state.loading
 );
 
+export const selectUpcomingEvents = createSelector(
+  selectAllEvents,
+  (events: Events[]) => {
+    const today = new Date();
 
-export const selectEventsAfterDate = (date: Date) =>
-  createSelector(selectAllEvents, (items: Events[]) =>
-    items.filter(item => new Date(item.date) > date)
-  );
+    return events.filter(event => {
+      const [day, month, year] = event.date.split('/').map(Number);
+      const eventDate = new Date(year, month - 1, day);
+      console.log(eventDate)
+      return eventDate >= today;
+    });
+  }
+);

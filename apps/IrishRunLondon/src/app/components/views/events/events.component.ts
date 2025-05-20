@@ -4,7 +4,7 @@ import { CardComponent } from '../../common/card/card.component';
 import { Store } from '@ngrx/store';
 import { loadEvents } from '../../../state/events.actions';
 import { Observable } from 'rxjs';
-import { selectAllEvents, selectEventsLoading, selectEventsAfterDate } from '../../../state/events.selectors';
+import { selectAllEvents, selectEventsLoading, selectUpcomingEvents } from '../../../state/events.selectors';
 
 @Component({
   selector: 'app-events',
@@ -15,15 +15,16 @@ import { selectAllEvents, selectEventsLoading, selectEventsAfterDate } from '../
 export class EventsComponent  implements OnInit {
   events$!: Observable<any[]>;
   loading$!: Observable<boolean>;
-  filterdEvents$!: Observable<any[]>;
+  upcomingEvents$!: Observable<any[]>;
   constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.store.dispatch(loadEvents());
     this.events$ = this.store.select(selectAllEvents);
+    
+    this.upcomingEvents$ = this.store.select(selectUpcomingEvents);
     this.loading$ = this.store.select(selectEventsLoading);
-   // this.store.dispatch(loadEvents());
-  //  this.filterdEvents$ = this.store.select(selectEventsAfterDate(new Date()));
+    console.log( this.upcomingEvents$ )
   }
 }
 
