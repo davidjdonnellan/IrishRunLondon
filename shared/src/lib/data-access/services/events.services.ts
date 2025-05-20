@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class EventsService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users';
+  private apiUrl = 'https://localhost:4200/api/data/events';
   constructor(private http: HttpClient) {}
 
   getEvents(): Observable<Events[]> {
