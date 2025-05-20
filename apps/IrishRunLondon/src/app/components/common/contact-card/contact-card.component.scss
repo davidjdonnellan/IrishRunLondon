@@ -9,9 +9,13 @@
     color: var(--irl-color-black);
     min-height:12rem;
     margin:1rem 0rem;
+    box-shadow: 0 4px 40px #4F6C811F;
 
 }
 
 .contact-card .tag{
-    font-weight: 700;
+   font-weight: 700;
+}
+.contact-card:hover{
+   box-shadow: 0 4px 16px #4F6C811F;
 }

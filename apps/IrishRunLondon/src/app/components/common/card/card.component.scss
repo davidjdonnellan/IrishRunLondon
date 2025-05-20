@@ -5,6 +5,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding:1.5rem;
     margin:1rem 0rem;
+    box-shadow: 0 4px 40px #4F6C811F;
 }
 
 .card img{
@@ -16,6 +17,5 @@
 }
 
 .card:hover{
-  //transform: translateY(-1px) scale(1.01) ;
-   box-shadow: 0 2px 8pxrgba(0, 0, 0, 0.1);
+   box-shadow: 0 4px 16px #4F6C811F;
 }
