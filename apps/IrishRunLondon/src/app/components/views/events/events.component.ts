@@ -21,10 +21,9 @@ export class EventsComponent  implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(loadEvents());
     this.events$ = this.store.select(selectAllEvents);
-    
     this.upcomingEvents$ = this.store.select(selectUpcomingEvents);
     this.loading$ = this.store.select(selectEventsLoading);
-    console.log( this.upcomingEvents$ )
+
   }
 }
 

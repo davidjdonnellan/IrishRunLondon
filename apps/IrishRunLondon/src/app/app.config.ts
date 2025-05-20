@@ -16,8 +16,8 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
-     provideHttpClient(withInterceptors([mockHttpInterceptor])),
-    provideStore({ events: eventsReducer }),  // ✅ Only once
+    provideHttpClient(withInterceptors([mockHttpInterceptor])),
+    provideStore({ events: eventsReducer }),
     provideEffects([EventsEffects]),
     provideStoreDevtools(),
   ],
