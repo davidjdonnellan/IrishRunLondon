@@ -83,6 +83,11 @@
 .nav-links li.active::after {
   transform: scaleX(1);
 }
+.route-wrapper {
+  position: relative;
+  min-height: 100vh; /* or use a fixed height */
+  display: block;
+}
 
 
 

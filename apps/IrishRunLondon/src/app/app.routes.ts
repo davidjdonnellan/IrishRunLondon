@@ -1,4 +1,4 @@
-import { RouterModule, Route } from '@angular/router';
+import { Route } from '@angular/router';
 import { HomeComponent } from './components/views/home/home.component';
 import { GalleryComponent } from './components/views/gallery/gallery.component';
 import { EventsComponent } from './components/views/events/events.component';
@@ -7,9 +7,9 @@ import { AboutComponent } from './components/views/about/about.component';
 
 
 export const appRoutes: Route[] = [
-     {path: '', component: HomeComponent },
-     {path: 'events', component: EventsComponent },
-     {path: 'gallery', component: GalleryComponent },
-     {path: 'contactus', component: ContactUsComponent },
-     {path: 'about', component: AboutComponent },
+     {path: '', component: HomeComponent, data: { animation: 'HomePage' } },
+     {path: 'events', component: EventsComponent , data: { animation: 'EventPage' }},
+     {path: 'gallery', component: GalleryComponent, data: { animation: 'GalleryPage' } },
+     {path: 'contactus', component: ContactUsComponent, data: { animation: 'ContactUsPage' } },
+     {path: 'about', component: AboutComponent, data: { animation: 'AboutPage' } },
 ];
