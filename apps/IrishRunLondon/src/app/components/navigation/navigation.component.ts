@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, ViewChild  } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -10,16 +10,16 @@ import { RouterModule } from '@angular/router';
 })
 export class NavigationComponent {
 
- isMenuOpen = false;
+ isMenuOpen = signal(false);
  @ViewChild('dropdownRef', { static: true }) dropdownRef!: ElementRef;
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+    this.isMenuOpen.update(v => !v);
   }
    // Listen to all clicks on the document
    @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent) {
     if (!this.dropdownRef.nativeElement.contains(event.target)) {
-      this.isMenuOpen = false;
+      this.isMenuOpen.update(v =>false);
     }
   }
   navItems = [{
