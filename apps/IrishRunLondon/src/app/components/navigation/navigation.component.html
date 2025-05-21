@@ -6,8 +6,9 @@
        (click)="toggleMenu()">
         ☰
       </button>
-      <ul class="nav-links" [ngClass]="{ 'show': isMenuOpen }">
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-items" *ngFor="let items of navItems">
+      <ul class="nav-links" [ngClass]="{ 'show': isMenuOpen() }">
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-items" *ngFor="let items of navItems; let isLast = last"
+         [ngStyle]="{ 'border-bottom': isLast ? 'none' : '' }">
           <a [routerLink]="items.href">{{items.title}}</a>
         </li>
       </ul>
