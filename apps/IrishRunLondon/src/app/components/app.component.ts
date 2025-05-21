@@ -23,14 +23,14 @@ import {
           })
         ], { optional: true }),
         group([
-  query(':leave', [
-    animate('300ms ease', style({ transform: 'translateX(-100%)' }))
-  ], { optional: true }),
-  query(':enter', [
-    style({ transform: 'translateX(100%)' }),
-    animate('300ms ease', style({ transform: 'translateX(0%)' }))
-  ], { optional: true })
-])
+          query(':leave', [
+            animate('1500ms ease-in-out', style({ opacity: 0 }))
+          ], { optional: true }),
+          query(':enter', [
+            style({ opacity: 0 }),
+            animate('1500ms ease-in-out', style({ opacity: 1 }))
+          ], { optional: true })
+        ])
       ])
     ])
   ]
