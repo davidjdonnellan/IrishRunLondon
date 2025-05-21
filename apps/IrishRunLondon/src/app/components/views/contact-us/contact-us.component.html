@@ -1,11 +1,7 @@
-<h1 class="text-center p-4 mt-4">Meet the organisers</h1>
-<div class="container">
- <div class="text-center p-2">
-            Whether it's your first week, or you're here every week, the organisers are on hand to make you feel welcome
-    Each week you'll find one of us leading the runs, and usually one of us at the back for anyone wanting a relaxed chatty pace.
-    We're on hand to make the runs as comfortable and as smooth as possible.
-    We're so delighted with how popular our runs are becoming.
-        </div>
-        </div>
-        <h5 class="text-center p-4">"More Runs, More Socials, More Irish"</h5>
-<panel *ngFor="let organiser of organisers; let i = index"  [data]="organiser" [index]="i"></panel>
+<h1 class="text-center px-5 py-4 mt-4">Get in touch</h1>
+
+<ul class="container">
+<div class="row m-auto" >
+    <div *ngFor="let contact of contactInfo"class="col-lg-3">
+        <contact-card [contact]="contact"></contact-card></div>
+</div>

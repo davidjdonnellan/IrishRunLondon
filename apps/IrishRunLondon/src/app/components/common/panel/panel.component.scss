@@ -1,9 +1,10 @@
 .panel{
     border-radius: 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 40px #4F6C811F;
     padding:3rem;
     margin:2rem;
     cursor: pointer;
+
 }
 
 .panel img{
@@ -18,7 +19,7 @@
 }
 
 .panel:hover{
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px #4F6C811F;
 }
 
 

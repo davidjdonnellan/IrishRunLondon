@@ -1,6 +1,12 @@
-<h1 class="text-left px-5 py-4 mt-4">Upcoing Events</h1>
+<h1 class="text-center px-5 py-4 mt-4">Upcoming Events</h1>
+<div *ngIf="loading$ | async"  class="d-flex justify-content-center align-items-center">
+  <div class="spinner-border spinner" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
 <div class="row m-auto" >
-    <div *ngFor="let event of events"class="col-sm-4">
+    <div *ngFor="let event of upcomingEvents$ | async"class="col-sm-4">
         <card [event]="event"></card></div>
 </div>
 

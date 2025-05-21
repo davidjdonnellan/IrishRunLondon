@@ -38,7 +38,7 @@
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
   font-size: 1.5rem;
-  font-weight: var(--irl-semi-bold);
+  font-weight: 600;
   border-bottom:3px solid var(--irl-color-primary)
   
 }
@@ -119,15 +119,25 @@
     padding:0rem 1.5rem;
     margin:0px;
     max-height: 0;
-    transition: max-height 0.2s ease-out;
+    transition: max-height 0.4s ease-in-out;
     gap: 0.5rem;
     border-bottom: 1px solid lightgray;  
+    overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease;
   }
 
   .nav-links li::after {
-
     background-color: white;
   }
+   .nav-links li a {
+    margin:auto;
+    padding:0rem 0.5rem;
+    display:flex;
+  }
+   .nav-links li{
+    width:100%;
+    border-bottom: 1px solid var(--irl-color-primary-light);
+   }
   /* Center-align the header title */
   .header-title {
     display: none;
@@ -138,8 +148,8 @@
     max-height: 500px; /* Enough to show all links */
     opacity: 1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* This is your shadow */
-    transition: max-height 0.4s ease-in;
-    padding:1rem 1.5rem;
+    transition: max-height 0.4s ease-in-out;
+    padding: 1rem 1.5rem;
     margin:0px;
 }
 

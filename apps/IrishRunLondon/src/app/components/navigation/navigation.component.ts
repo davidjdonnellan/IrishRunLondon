@@ -33,9 +33,13 @@ export class NavigationComponent {
   {
     "title": "Events",
     "href": '/events'
-  }, {
-    "title": "Contact",
-    "href": '/contactus'
   },
+  {
+    "title": "About",
+    "href": '/about'
+  }, {
+    "title": "Join us",
+    "href": '/contactus'
+  }
   ]
 }

@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@irish-run-london/data-access": ["shared/src/index.ts"],
+      "@irish-run-london/data-access/services":["shared/src/lib/data-access/services/index.ts"],
+      "@irish-run-london/data-access/models":["shared/src/lib/data-access/models/index.ts"],
+      "@irish-run-london/interceptors":["shared/src/lib/interceptors/index.ts"],
+      
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
