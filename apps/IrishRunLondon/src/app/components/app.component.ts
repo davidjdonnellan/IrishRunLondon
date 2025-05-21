@@ -24,11 +24,11 @@ import {
         ], { optional: true }),
         group([
           query(':leave', [
-            animate('1500ms ease-in-out', style({ opacity: 0 }))
+            animate('150ms ease-in-out', style({ opacity: 0 }))
           ], { optional: true }),
           query(':enter', [
             style({ opacity: 0 }),
-            animate('1500ms ease-in-out', style({ opacity: 1 }))
+            animate('150ms ease-in-out', style({ opacity: 1 }))
           ], { optional: true })
         ])
       ])
