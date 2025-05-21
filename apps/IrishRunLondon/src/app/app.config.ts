@@ -9,6 +9,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { eventsReducer } from './state/events.reducer';
 import { EventsEffects } from './state/events.effects';
 import { mockHttpInterceptor } from '@irish-run-london/interceptors';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 
 export const appConfig: ApplicationConfig = {
@@ -20,6 +21,8 @@ export const appConfig: ApplicationConfig = {
     provideStore({ events: eventsReducer }),
     provideEffects([EventsEffects]),
     provideStoreDevtools(),
+    provideAnimations()
+    
   ],
 };
 
